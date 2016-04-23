@@ -1,0 +1,15 @@
+Mario =
+{
+	attributes = {
+          ["life"] = {type = "NumberAttribute", value = 1},
+          ["CameraAttribute"] = {type = "CameraAttribute", value = {position = {y = 0,x = 0,z = 0,}}},
+          ["NumberAttribute"] = {type = "NumberAttribute", value = 0},
+          ["ViewportAttribute"] = {type = "ViewportAttribute", value = {height = 480,width = 640,}},
+          ["BoolAttribute"] = {type = "BoolAttribute", value = false},
+          ["TableAttribute"] = {type = "TableAttribute", value = {}},
+	},
+	components = {
+		["HatComponent"] = 0,
+		["LifeComponent"] = 0,
+	},
+}

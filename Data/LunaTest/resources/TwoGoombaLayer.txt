@@ -1,0 +1,19 @@
+Goomba = 
+{
+    attributes = {
+        ["life"] = {type = "NumberAttribute", value = 1},
+    },
+    components = {
+        LifeComponent = 1,
+    },
+}
+
+Goomba = 
+{
+    attributes = {
+        ["life"] = {type = "NumberAttribute", value = 1},
+    },
+    components = {
+        LifeComponent = 1,
+    },
+}
