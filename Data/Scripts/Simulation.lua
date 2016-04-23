@@ -30,11 +30,13 @@ function m.reportLeaks()
 end
 
 function m.setHistogramEnabled(bool)
-    MOAISim.setHistogramEnabled(bool)
+    -- MOAISim.setHistogramEnabled(bool)
+    -- Find a replacement 1.7 removes this method
 end
 
 function m.setLeakTrackingEnabled(bool)
-    MOAISim.setLeakTrackingEnabled(bool)
+    -- MOAISim.setLeakTrackingEnabled(bool)
+    -- Find a replacement 1.7 removes this method
 end
 
 function m.setLuaAllocLogEnabled(bool)

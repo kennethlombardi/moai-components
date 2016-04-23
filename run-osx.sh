@@ -1,3 +1,5 @@
 #!/bin/bash
 
-bin/osx/moai Data/Scripts/config.lua Data/Scripts/main.lua
+export MOAI_CONFIG=./Data/Scripts
+echo ${MOAI_CONFIG}
+hosts/osx/moai ./Data/Scripts/main.lua
