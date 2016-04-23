@@ -1,0 +1,19 @@
+Layer2D =
+{
+	attributes = {
+          ["visible"] = {type = "BoolAttribute", value = true},
+          ["camera"] = {type = "CameraAttribute", value = {rotation = {x = 0},position = {y = 0, x = 0},}},
+          ["viewport"] = {type = "ViewportAttribute", value = {height = 480, width = 640}},
+          ["CameraAttribute"] = {type = "CameraAttribute", value = {rotation = {x = 0},position = {y = 0, x = 0},}},
+          ["BoolAttribute"] = {type = "BoolAttribute", value = false},
+          ["NumberAttribute"] = {type = "NumberAttribute", value = 0},
+          ["TableAttribute"] = {type = "TableAttribute", value = {}},
+	},
+	components = {
+		["HatComponent"] = 0,
+		["LifeComponent"] = 0,
+		["LayerTestComponent"] = {
+			time = 0,
+},
+	},
+}

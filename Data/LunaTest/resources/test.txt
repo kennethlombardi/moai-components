@@ -1,0 +1,1 @@
+["FloatTestComponent"] = 333.33
