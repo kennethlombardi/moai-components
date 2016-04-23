@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bin/osx/moai Data/Scripts/config.lua Data/LunaTest/main.lua
+hosts/osx/moai Data/LunaTest/main.lua
