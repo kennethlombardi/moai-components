@@ -1,4 +1,4 @@
-require "com.jessewarden.statemachine.State"
+require "States.State"
 StateMachine = {}
 
 function StateMachine:new(entity)
@@ -11,7 +11,12 @@ function StateMachine:new(entity)
     -- option: If you want to just use self to dispatch events,
     -- have stateMachine extend a table instead.
     --local stateMachine = {}
-    local stateMachine = display.newGroup()
+    -- local stateMachine = display.newGroup()
+    local stateMachine = {}
+    function stateMachine:dispatchEvent(event)
+        --print("stateMachine:dispatchEvent", event)
+    end
+
     stateMachine.states = {}
     stateMachine.id = nil
     stateMachine.state = nil
