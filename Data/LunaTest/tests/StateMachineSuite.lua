@@ -2,7 +2,7 @@ module(..., package.seeall)
 
 function suite_setup()
     require "States.State"
-    require "StateMachine"
+    require "StateMachine2"
     require "States.BaseState"
     Factory = require("Factory")
 end
