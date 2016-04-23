@@ -2,8 +2,8 @@
         Resource Manager (Singleton)
         ------------------------------------------------------------------------
         This class will be used to access resources. The class will keep a cache
-        of previously loaded values that can be quickly loaded from memory. 
-        Things in the cache can still be garabage collected if not in use 
+        of previously loaded values that can be quickly loaded from memory.
+        Things in the cache can still be garabage collected if not in use
         anywhere else.
 --]]
 
@@ -13,14 +13,14 @@ local RM = {}
 
 --create a cache using a lua weaktable so that it can be garbage collected.
 local cache = {}
-setmetatable(cache, {__mode = 'v'}) 
+setmetatable(cache, {__mode = 'v'})
 local handlers
 local holds
 
 -- Initilze the resource manager
 function RM.initialize()
     cache = {}
-    setmetatable(cache, {__mode = 'v'}) 
+    setmetatable(cache, {__mode = 'v'})
 
     handlers = {}
     holds = {}
@@ -76,14 +76,14 @@ function RM.load(typename, filename)
     end
 
     if (type(filename) ~= "string") then
-        MOAILogMgr.log("ResourceMgr load failed: filename incorrect type(" .. 
+        MOAILogMgr.log("ResourceMgr load failed: filename incorrect type(" ..
         filename .. ")\n")
         return
     end
-    
+
     local hash = RM.createHash(typename, filename)
     local data = cache[hash]
-    
+
     --load from file if not in cache
     if (data == nil) then
         handler = handlers[typename]
@@ -91,18 +91,18 @@ function RM.load(typename, filename)
             MOAILogMgr.log("ResourceMgr load failed: no handler for " .. typename .. '\n')
             return
         end
-        
+
         data = handler(filename)
         if ( not data ) then
-        
+
             MOAILogMgr.log("ResourceMgr load failed:(".. filename ..
             ") load returned nil\n")
             return
         end
-        
+
         cache[hash] = data
     end
-    
+
     return data
 end
 
@@ -125,10 +125,10 @@ function RM.flush()
     for k in pairs(cache) do
         cache[k] = nil
     end
-    
+
     holds = {}
 
-    collectgarbage() --maybe this shouldn't be here, side effect?
+    MOAISim.forceGC() -- collectgarbage() --maybe this shouldn't be here, side effect?
 end
 
 function RM.resourceCount()
@@ -136,7 +136,7 @@ function RM.resourceCount()
     for _ in pairs(cache) do
         count = count + 1
     end
-    
+
     return count
 end
 

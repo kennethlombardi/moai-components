@@ -1,3 +1,4 @@
+package.path = package.path .. ';./Data/Scripts/?.lua'
 local DEVICE_WIDTH = 1280
 local DEVICE_HEIGHT = 720
 
