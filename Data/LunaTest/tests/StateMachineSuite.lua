@@ -123,7 +123,7 @@ function test_hierarchical()
     assert_true(machine:canChangeStateTo("melee attack"), "We're not allowed to go to our child state melee attack from attack?")
     assert_true(machine:changeState("melee attack"), "I don't get it, we're in the parent attack state, why can't we change?")
     assert_true(machine:canChangeStateTo("smash"), "We're not allowed to go to our smash child state from our parent melee attack state?")
-    
+
     assert_true(machine:canChangeStateTo("attack"), "We're not allowed to go back to our parent attack state?")
     assert_true(machine:changeState("smash"), "We're not allowed to actually change state to our smash child state.")
     assert_false(machine:changeState("attack"))
@@ -174,7 +174,7 @@ function test_runToReadyFail()
         assert_true(machine:canChangeStateTo("WalkState"), "Should be able to move from RunState to WalkState")
         assert_false(machine:canChangeStateTo("ReadyState"), "Should not be able to move from RunState to ReadyState")
     end
-    
+
     testBeingInReadyState()
     machine:changeStateToAtNextTick("WalkState")
     machine:tick()
@@ -202,9 +202,9 @@ function test_parentToChildThenBackToParent()
     machine = StateMachine:new(entity)
     machine:addState2(ParentState:new())
     machine:addState2(ChildState:new())
-    
+
     machine:setInitialState("ParentState")
-    assert_true(machine:canChangeStateTo("ChildState"), "Should be able to change from scout to ChildState")
+    assert_true(machine:canChangeStateTo("ChildState"), "Should be able to change from ParentState to ChildState")
     machine:changeState("ChildState")
     assert_true(not machine:canChangeStateTo("ChildState"), "Shouldn't be able to change from ChildState to ChildState")
     assert_true(machine:canChangeStateTo("ParentState"), "Why can't I go from child to parent?")
